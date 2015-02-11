@@ -13,14 +13,63 @@ define([
 
     return Backbone.View.extend({
         events: {
-            'click #mainEpisodeVideo': 'startVideo'
+            'click #mainEpisodeVideo': 'playVideo',
+            'click #shareButtons button': 'shareVideo'
         },
 
-        startVideo:function(){
-            $('#mainEpisode').addClass('videoPlaying');
+        shareVideo:function(e){
+            var twitterBaseUrl = "https://twitter.com/home?status=";
+            var facebookBaseUrl = "https://www.facebook.com/dialog/feed?display=popup&app_id=741666719251986&link=";
+            var sharemessage = this.mainVideo.couple + ": One Couple. Two cameras. What happens next? #WatchMeDate ";
+            var network = $(e.currentTarget).attr('data-source'); //make sure to add the network (pinterest,twitter,etc) as a classname to the target
+            var shareWindow = "";
+            var queryString = "?date="+this.mainVideo.coupleid;
+            var coupleImage = "{{assets}}/imgs/dates/" + this.mainVideo.coupleid + '.jpg';
+            var guardianUrl = "http://preview.gutools.co.uk/global/ng-interactive/2015/feb/11/watch-me-date" + queryString;
+            
+
+            if(network === "twitter"){
+                shareWindow = 
+                    twitterBaseUrl + 
+                    encodeURIComponent(sharemessage) + 
+                    "%20" + 
+                    encodeURIComponent(guardianUrl)
+                
+            }else if(network === "facebook"){
+                shareWindow = 
+                    facebookBaseUrl + 
+                    encodeURIComponent(guardianUrl) + 
+                    "&picture=" + 
+                    encodeURIComponent(coupleImage) + 
+                    "&redirect_uri=http://www.theguardian.com";
+            }else if(network === "pinterest"){
+                shareWindow = 
+                    pinterestBaseUrl + 
+                    encodeURIComponent(guardianUrl) + 
+                    "&media=" + 
+                    encodeURIComponent(gifUrl) + 
+                    "&description=" + 
+                    encodeURIComponent(sharemessage);
+            }else if(network === "tumblr"){
+                shareWindow = 
+                    tumblrBaseUrl + 
+                    encodeURIComponent(guardianUrl) + 
+                    '&description=' + 
+                    encodeURIComponent(imageHTML)
+            }  
+            console.log(shareWindow);
+            window.open(shareWindow, network + "share", "width=640,height=320");
+        },
+
+        playVideo:function(e){
+            $('#mainEpisode #videoContainer').html('<iframe src="http://embed.theguardian.com/embed/video/' + this.mainVideo.embedpath + '#autoplay" scrolling="no" frameborder="none" width="100%" height="100%"></iframe>');
+            $('#mainEpisode #backgroundImage').fadeOut(500,function(){
+               $('#mainEpisode').addClass('videoPlaying');
+            })
         },
 
         render: function(templateData){
+            this.mainVideo = templateData;
             this.$el.html(Mustache.render(template, {mainEpisode: templateData}));
             return this;
         }

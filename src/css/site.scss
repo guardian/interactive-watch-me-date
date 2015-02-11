@@ -22,11 +22,11 @@ body{
 		box-sizing:border-box;	
 	}
 	h1,h2,h3,h4,h5{
-		font-family:'Guardian Egyptian Web',serif;
+		font-family:"Guardian Egyptian Web","Egyptian Display","Guardian Text Egyptian Web","Egyptian Text",Georgia,serif;
 	}
 
 	.sectionHeading{
-		margin:40px 10px 20px;
+		margin:40px 0 20px;
 		border-top:1px solid #767676;
 		padding:4px 0;
 		font-size:18px;
@@ -55,19 +55,41 @@ body{
     	margin-top:10px;
     }
 
+    #headerContainer{
+    	position:relative;
+    	margin-bottom:20px;
+    	h2{
+    		font-size: 14px;
+    		font-weight: normal;
+    		margin: 0 10px;
+    		text-align: center;
+    	}
+    	img{
+    		width:100%;
+    	}
+    	#headerImage{
+    		font-size:0;
+    		position:relative;
+    		overflow:hidden;
+    	}
+    	#headerImage:after{
+    		width: 100%;
+			height: 35%;
+			content: '';
+			background: linear-gradient(to bottom,rgba(52,52,52,0),rgba(52,52,52,1));
+			position: absolute;
+			bottom: 0;
+			left: 0;
+    	}
+    }
+
 
     // CONTENT
     #content{
     	background:#333;
     	height:auto;
-    	padding:1px 0 40px;
+    	padding:1px 0 80px;
     	margin:0;
-    }
-
-    #headerContainer{
-    	padding:1px 10px;
-    	background:#eee;
-    	margin-bottom:20px;
     }
 
 
@@ -83,9 +105,6 @@ body{
     		}
     		#videoContainer{
     			display:block;
-    		}
-    		#backgroundImage{
-    			display:none;
     		}
     	}
     	#videoContainer{
@@ -140,7 +159,7 @@ body{
     }
 
     #episodeQuote{
-    	font-family:'Guardian Egyptian Web';
+    	font-family:"Guardian Egyptian Web","Egyptian Display","Guardian Text Egyptian Web","Egyptian Text",Georgia,serif;
     	font-weight:100;
     	font-size:20px;
     	margin:0 20px 20px;
@@ -164,10 +183,8 @@ body{
 
     #backgroundLayer{
     	position:relative;
+    	display:none;
     	transition:0.5s background;
-    	button{
-    		display:none;
-    	}
     }
 
     #mainEpisodeContent{
@@ -182,14 +199,14 @@ body{
     		margin:0;
     	}
     	h3{
-    		
+    		font-weight:bold;
     		font-size:30px;
     		line-height:1.2em;
     	}
     	date{
     		display:block;
     		
-    		font-family:'Guardian Text Sans Web', Arial;
+    		font-family:'Guardian Text Sans Web','Agate Sans',sans-serif;
     		color:#bdbdbd;
     		font-size:14px;
     	}
@@ -197,6 +214,7 @@ body{
     		font-size:14px;
     		border-top:1px solid #767676;
     		padding-top:20px;
+    		margin-top:1em;
     	}
     }
 
@@ -210,6 +228,9 @@ body{
     	.sectionHeading{
     		border-top:none;
     		margin-top:0;
+    		margin-left:10px;
+    		margin-right:10px;
+    		line-height:1.2em;
     	}
     	img{
     		width:100%;
@@ -219,11 +240,16 @@ body{
     		font-size:22px;
     		margin:0;
     		line-height:1.2em;
+    		font-weight:bold;
     	}
     	p{
     		margin-top:5px;
     		font-size:14px;
     	}
+    }
+    #teaserMobile{
+    	display:none;
+    	font-family:'Guardian Text Sans Web','Agate Sans',sans-serif;
     }
 
 
@@ -239,14 +265,14 @@ body{
     	padding-top:5px;
     	border-top:1px solid #767676;
     	#signupTitle{
-    		font-family:'Guardian Egyptian Web',serif;
+    		font-family:"Guardian Egyptian Web","Egyptian Display","Guardian Text Egyptian Web","Egyptian Text",Georgia,serif;
     		color:#da82d1;
     		font-weight:bold;
     		font-size:18px;
     		margin:0;
     	}
     	#signupDescription{
-    		font-family:'Guardian Text Sans Web',sans-serif;
+    		font-family:'Guardian Text Sans Web','Agate Sans',sans-serif;
     		margin-top:0.5em;
     	}
     }
@@ -278,12 +304,13 @@ body{
     	}
     	p{
     		font-size:14px;
-    		font-family:'Guardian Egyptian Web';
+    		line-height:1.2em;
+    		font-family:"Guardian Egyptian Web","Egyptian Display","Guardian Text Egyptian Web","Egyptian Text",Georgia,serif;
     		font-weight:bold;
     		margin-top:0;
     		span{
     			display:block;
-    			font-family:'Guardian Text Sans Web';
+    			font-family:'Guardian Text Sans Web','Agate Sans',sans-serif;
     			font-weight:normal;
     			color:#b2b2b2;
     		}
@@ -310,16 +337,76 @@ body{
     #aboutDates{
     	p{
     		margin-top:0;
-    		font-family:'Guardian Text Sans Web';
+    		font-family:'Guardian Text Sans Web','Agate Sans',sans-serif;
     		font-size:14px;
     	}
     	#participate{
     		font-size:18px;
     		a{
     			color:#da82d1;
+    			font-weight:bold;
     		}
     	}
     }
+
+    footer{
+    	background:#424242;
+    	#soulmatesBanner{
+    		background:#f5f3e6;
+    		height:180px;
+    		position:relative;
+    		padding-top:20px;
+    		img{
+    			position:absolute;
+    			bottom:0;
+    			left:50%;
+    			transform:translateX(-50%);
+    		}
+    		a{
+    			background:#995490;
+    			color:#fff;
+    			display:block;
+    			margin:0 auto;
+    			width:140px;
+    			height:40px;
+    			text-decoration:none;
+    			font-weight:bold;
+    			padding:8px 0 0 10px;
+    			position:relative;
+    			span{
+    				position:absolute;
+    				right:7px;
+    				top:4px;
+    				width:31px;
+    				height:31px;
+    			}
+    		}
+    	}
+    }
+    #footerContent{
+    	padding-bottom:1px;
+		.colophon{
+			column-count:2;
+			padding:0;
+			margin:20px 10px 10px;
+			li{
+				padding:0;
+				margin:0;
+			}
+		}
+		a{
+			color:gainsboro;
+			text-decoration:none;
+			padding-bottom:12px;
+			font-size:14px;
+			line-height:22px;
+			font-weight:500;
+			display:inline-block;
+			&:hover{
+				text-decoration:underline;
+			}
+		}
+	}
     @media(min-width:440px){
     	iframe#form{
 			height:50px;
@@ -335,7 +422,7 @@ body{
 	    	margin:0 20px;
 	    }
 	    .sectionHeading{
-	    	margin:40px 20px 20px;
+	    	margin:40px 0 20px;
 	    	font-size:20px;
 	    }
 	    #mainEpisodeContent p, #episodeTeaser p{
@@ -359,6 +446,9 @@ body{
 	    		font-size:16px;
 	    		max-width:620px;
 	    	}
+	    	#participate{
+	    		font-size:22px;
+	    	}
 	    }
 	    #mainEpisodeContent h3{
 	    	font-size:38px;
@@ -366,6 +456,10 @@ body{
 	    #episodeTeaser{
 	    	h3{
 	    		font-size:30px;
+	    	}
+	    	.sectionHeading{
+	    		margin-left:20px;
+	    		margin-right:20px;
 	    	}
 	    }
 
@@ -375,6 +469,12 @@ body{
 	    .episodeBlock p{
 	    	font-size:16px;
 	    }
+        #footerContent{
+    		.colophon{
+    			margin-left:20px;
+    			margin-right:20px;
+    		}
+    	}
     }
 
     @media(min-width:660px){
@@ -424,7 +524,12 @@ body{
 					display:block;
 				}
 			}
-			
+			.sectionHeading{
+				display:none;
+			}
+		}
+		#teaserMobile{
+			display:block;
 		}
 		#signupBox{
 			overflow:hidden;
@@ -458,7 +563,36 @@ body{
 				width:120px;
 			}
 		}
-		
+		footer{
+			#soulmatesBanner{
+				height:100px;
+				.advertContainer{
+					width:480px;
+					margin:0 auto;
+					position: absolute;
+					  left: 50%;
+					  margin-left: -240px;
+					  bottom: 0;
+					&:after{
+						clear:both;
+						content:'';
+						display:block;
+					}
+				}
+				img{
+					position:relative;
+					left:auto;
+					transform:none;
+					float:left;
+				}
+				a{
+					display:inline-block;
+					float:left;
+					margin:20px 0 0 60px;
+				}
+			}
+		}
+
     	
     }
 
@@ -475,7 +609,7 @@ body{
         .sectionHeading{
             font-size:22px;
         }
-        #content,#navContainer{
+        #content,#navContainer,#footerContent{
         	max-width:740px;
         	margin:0 auto;
         }
@@ -511,6 +645,7 @@ body{
         }
         #backgroundLayer{
         	position: absolute;
+        	display:block;
 			z-index: 5;
 			height: 100%;
 			width: 100%;
@@ -540,14 +675,25 @@ body{
 			clear:both;
 			margin-top:20px;
 		}
+		#footerContent{
+			.colophon{
+				column-count:3;
+			}
+		}
 
     }
 
     @media(min-width:980px){
+    	#headerContainer{
+    		margin:0 -20px 20px;
+    	}
     	#content,#navContainer{
         	max-width:980px;
         	margin:0 auto;
-        	padding:0 20px 40px;
+        	padding:0 20px 80px;
+        }
+        #footerContent{
+        	max-width:980px;
         }
         .contentBlock{
     		max-width:none;
@@ -567,10 +713,10 @@ body{
     	
 
     	.episodeBlock{
-    		width:32%;
+    		width:23.5%;
     		margin-right:2%;
     		padding:0;
-    		&:nth-of-type(3n){
+    		&:nth-of-type(4n){
     			margin-right:0;
     		}
     		&:nth-of-type(2n){
@@ -586,11 +732,27 @@ body{
 
 		#mainEpisodeContent{
 			margin-top:-120px;
-			padding:30px 20px;
-			max-width:540px;
+			padding:20px 20px;
+			max-width:530px;
 			margin-left:110px;
 			margin-bottom:80px;
 		}
+
+	    #headerContainer{
+	    	img{
+	    		margin:-60px 0 -40px;
+	    	}
+	    	#headerImage:after{
+	    		height:30%;
+	    	}
+	    }
+
+	    #headerContainer{
+	    	h2{
+	    		margin-left:140px;
+	    		text-align:left;
+	    	}
+	    }
 
 
     }
@@ -604,6 +766,13 @@ body{
     	}
     	#episodeTeaser{
     		margin:0 -20px;
+    		padding-top:12px;
+    		.sectionHeading{
+    			padding:0;
+    			line-height:1.1em;
+    			display:block;
+    			margin:0;
+    		}
     	}
     	#teaserMobile{
     		display:none;
@@ -617,34 +786,60 @@ body{
     		margin-left:160px;
     		margin-top:5px;
     	}
-    	#content,#navContainer{
+    	#content,#navContainer,#footerContent{
         	max-width:1140px;
         }
         #teaserContainer{
         	margin-left:160px;
         }
+        .episodeBlock{
+        	p{
+        		font-size:18px;
+	        	span{
+	        		font-size:14px;
+	        	}
+        	}
+        	
+        }
         #aboutDates{
         	margin-top:40px;
         	border-top:1px solid #767676;
-        	padding-top:10px;
+        	padding-top:0;
+        	#participate{
+        		font-size:22px;
+        	}
+        	p{
+        		max-width:75%;
+        	}
         }
         #aboutDatesContainer{
         	margin-left:160px;
+        	margin-top:10px;
         }
-        #participate{
-        	font-size:22px;
-        }
+        
 
    		#mainEpisodeContent{
    			margin-left:140px;
    		}
+
+   		#headerContainer{
+   			h2{
+   				margin-left:180px;
+   			}
+   		}
     }
 
     @media(min-width:1300px){
-    	#content,#navContainer{
-        	max-width:1300px;
-        }
-    	#content,#navContainer{
+    	.sectionHeading{
+    		width:220px;
+    	}
+    	#allEpisodesContainer,#teaserContainer,#aboutDatesContainer{
+    		margin-left:240px;
+    	}
+    	#mainEpisodeContent{
+    		margin-left:220px;
+    	}
+    	#content,#navContainer,#footerContent{
     		margin:0 auto;
     		max-width:1300px;
     	}
@@ -656,10 +851,67 @@ body{
 	    	width:96px;
 	    	height:96px;
 	    }
+	    #footerContent{
+			.colophon{
+				column-count:4;
+			}
+		}
+		#headerContainer{
+   			h2{
+   				margin-left:240px;
+   			}
+   		}
     }
-
-
     
+}
 
-    
+// SHARE BUTTONS
+
+#shareButtons{
+	font-family:'Guardian Text Sans Web','Agate Sans',sans-serif;
+	font-size:14px;
+	color:#767676;
+	margin-top:0;
+	p{
+		margin:0 0 5px;
+	}
+	button{
+		background:#333;
+		width:32px;
+		height:32px;
+		border:none;
+		border-radius:9000px;
+		display:inline-block;
+		vertical-align: top;
+		color:#fff;
+        margin-bottom:5px;
+		cursor:pointer;
+        outline:none;
+		&#shareTwitter{
+			background:#03b3ee url(../imgs/twitterIcon.svg) no-repeat center center;
+			&:hover{
+    			background-color:darken(#03b3ee,10%);
+    		}
+		}
+		&#shareFacebook{
+			background:#3067a3 url(../imgs/facebookIcon.svg) no-repeat center center;
+			&:hover{
+    			background-color:darken(#3067a3,10%);
+    		}
+		}
+        &#sharePinterest{
+            background:#b9252c url(../imgs/pinterestIcon.svg) no-repeat center center;
+            &:hover{
+                background-color:darken(#b9252c,10%);
+            }
+        }
+        &#shareTumblr{
+            background:#36465d url(../imgs/tumblrIcon2.svg) no-repeat center center;
+            background-size:11px;
+            &:hover{
+                background-color:darken(#36465d,10%);
+            }
+        }
+
+	}
 }

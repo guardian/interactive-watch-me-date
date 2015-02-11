@@ -27,16 +27,22 @@ define([
         switchVideo:function(e){
             var clickedCouple = $(e.currentTarget).attr('data-date');
 
-            var foundValue = _.findWhere(this.collection.toJSON(),{
+            var foundValue = _.findWhere(this.allEpisodes,{
                 'coupleid':clickedCouple
             });
 
             this.mainEpisode = foundValue;
             this.mainVideo.render(this.mainEpisode);
+            var _this = this;
+            
+            var videoOffset = $('#mainEpisode').offset().top - 40;
             
             $('html,body').animate({
-                scrollTop:0
-            },500);
+                scrollTop:videoOffset
+            },500,function(){
+                _this.mainVideo.playVideo();
+            });
+
 
             this.updateActiveVideo();
         },
@@ -63,7 +69,7 @@ define([
             }
 
             if(this.queryValue){
-                var foundValue = _.findWhere(this.collection.toJSON(),{
+                var foundValue = _.findWhere(this.allEpisodes,{
                     'coupleid':this.queryValue
                 });
                 console.log(foundValue);
@@ -73,9 +79,8 @@ define([
             }
 
             if(typeof this.mainEpisode === "undefined"){
-                this.mainEpisode = _.last(_.where(this.collection.toJSON(),{'published':'yes'}));
+                this.mainEpisode = _.last(_.where(this.allEpisodes,{'published':'yes'}));
             }
-            console.log(this.mainEpisode);
         },
 
         initialize: function() {   
@@ -84,11 +89,32 @@ define([
         },
 
         render: function() {
+            var _this = this;
+            this.months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+            this.allEpisodes = _.map(this.collection.toJSON(),function(episode){
+                var day = episode.date.split('/')[0];
+                var monthNumber = parseInt(episode.date.split('/')[1]);
+                var month = _this.months[monthNumber-1];
+                episode.date = month + " " + day;
+                return episode;
+            });
+
             this.selectInitialDate();
-            this.allEpisodes = this.collection.toJSON();
+
+            // Check if in app or on website
+            var isWeb = true;
+            if(typeof window.guardian === "undefined"){
+                isWeb = false;
+            }
+
+            $('#article-body').addClass('interactivePadding');
            
             // Render main template
-            this.$el.html(Mustache.render(template, {allEpisodes: this.allEpisodes}));
+            this.$el.html(Mustache.render(template, {
+                allEpisodes: this.allEpisodes,
+                isWeb: isWeb
+            }));
 
             // Render main video
             this.$('#mainVideoContainer').html(this.mainVideo.render(this.mainEpisode).el);

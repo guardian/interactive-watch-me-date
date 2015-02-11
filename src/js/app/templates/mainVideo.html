@@ -10,7 +10,7 @@
             <div id="backgroundContainer">
                 <img id="backgroundImage" src="{{assets}}/imgs/dates/{{coupleid}}.jpg" />
                 <div id="videoContainer">
-                    <iframe src="http://embed.theguardian.com/embed/video/{{embedpath}}" scrolling="no" frameborder="none" width="100%" height="100%"></iframe>
+                    
                 </div>
                 <button data-date="{{coupleid}}" class="startVideo"><span></span></button>
             </div>
@@ -19,6 +19,10 @@
             <h3>{{couple}}</h3>
             <date>{{date}}</date>
             <p id="episodeDescription">{{description}}</p>
+             <div id="shareButtons">
+                <button data-source="twitter" id="shareTwitter" data-couple="{{coupleid}}"></button>
+                <button data-source="facebook" id="shareFacebook" data-couple="{{coupleid}}"></button>
+            </div>
         </div>
     </div>
 {{/mainEpisode}}

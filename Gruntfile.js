@@ -110,6 +110,7 @@ module.exports = function(grunt) {
         files: [
           { src: 'src/index.html', dest: 'build/index.html' },
           { src: 'src/form.html', dest: 'build/form.html' },
+          { src: 'src/thanks.html', dest: 'build/thanks.html' },
           { src: 'src/ngw.html', dest: 'build/ngw.html' },
           { src: 'src/js/libs/curl.js', dest: 'build/assets/js/curl.js' },
           { src: 'src/boot.js', dest: 'build/boot.js' },
