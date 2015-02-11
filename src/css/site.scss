@@ -1,0 +1,665 @@
+$accent-color : #9a5f8f;
+$blue-color : #6eb9d0;
+
+// Main site CSS
+body{
+	margin:0;
+
+}
+.element-interactive.interactive{
+	margin:0;
+	padding:0;
+}
+
+.guInteractive {
+	iframe#form{
+		overflow:hidden;
+	}
+	background:#555;
+	color:#fff;
+
+	*{
+		box-sizing:border-box;	
+	}
+	h1,h2,h3,h4,h5{
+		font-family:'Guardian Egyptian Web',serif;
+	}
+
+	.sectionHeading{
+		margin:40px 10px 20px;
+		border-top:1px solid #767676;
+		padding:4px 0;
+		font-size:18px;
+	}
+
+	// GDN NAVIGATION
+    #guardianNav{
+    	height:48px;
+    	background:#296d96;
+    	width:100%;
+    }
+    .contentBlock{
+    	margin:0 10px;
+    	max-width:1300px;
+    }
+
+    #navContainer{
+		background:#005689;
+		height:100%;
+		padding:0 10px;
+	}
+
+    #guardianLogo{
+    	width:170px;
+    	float:right;
+    	margin-top:10px;
+    }
+
+
+    // CONTENT
+    #content{
+    	background:#333;
+    	height:auto;
+    	padding:1px 0 40px;
+    	margin:0;
+    }
+
+    #headerContainer{
+    	padding:1px 10px;
+    	background:#eee;
+    	margin-bottom:20px;
+    }
+
+
+    // MAIN VIDEO
+    #mainEpisode{
+    	position:relative;
+    	&.videoPlaying{
+    		#mainEpisodeContent{
+    			margin-top:0;
+    		}
+    		.startVideo{
+    			display:none;
+    		}
+    		#videoContainer{
+    			display:block;
+    		}
+    		#backgroundImage{
+    			display:none;
+    		}
+    	}
+    	#videoContainer{
+    		width:100%;
+    		height:0;
+    		padding-bottom:56.25%;
+    		position:relative;
+    		display:none;
+    		iframe{
+    			position:absolute;
+
+    		}
+    	}
+    }
+    #mainEpisodeVideo{
+    	position:relative;
+    	cursor: pointer;
+
+    	&:hover{
+    		.startVideo{
+    			background:$accent-color;
+    		}
+    	}
+    }
+    .startVideo{
+    	width:44px;
+    	height:44px;
+    	border:none;
+    	border-radius:140px;
+    	background:rgba(0,0,0,0.8);
+    	outline:none;
+    	cursor:pointer;
+    	transition:0.5s background;
+    	span{
+    		position:relative;
+	    	&:before{
+	    		content: '';
+	    		position: absolute;
+	    		display: block;
+	    		width: 0;
+	    		height: 0;
+	    		border-style: solid;
+	    		border-width: 1em 0 1em 2.4em;
+	    		border-color: transparent transparent transparent #f1f1f1;
+	    		-moz-transform: scale(0.99999);
+	    		top: 50%;
+	    		left: 50%;
+	    		margin-top: -.9em;
+	    		margin-left: -.9em;
+	    	}
+	    }
+    }
+
+    #episodeQuote{
+    	font-family:'Guardian Egyptian Web';
+    	font-weight:100;
+    	font-size:20px;
+    	margin:0 20px 20px;
+    	
+    }
+
+    #backgroundContainer{
+    	position:relative;
+    	font-size:0;
+    	margin:0 -10px;
+    	img{
+    		width:100%;
+    	}
+    	button{
+    		position:absolute;
+    		top:30%;
+    		left:50%;
+    		margin-left:-22px;
+    	}
+    }
+
+    #backgroundLayer{
+    	position:relative;
+    	transition:0.5s background;
+    	button{
+    		display:none;
+    	}
+    }
+
+    #mainEpisodeContent{
+    	padding:15px 10px 15px;
+    	margin:0 -10px;
+    	background: #424242;
+    	position:relative;
+    	z-index:5;
+    	transition:0.5s margin;
+
+    	h3,h4{
+    		margin:0;
+    	}
+    	h3{
+    		
+    		font-size:30px;
+    		line-height:1.2em;
+    	}
+    	date{
+    		display:block;
+    		
+    		font-family:'Guardian Text Sans Web', Arial;
+    		color:#bdbdbd;
+    		font-size:14px;
+    	}
+    	p{
+    		font-size:14px;
+    		border-top:1px solid #767676;
+    		padding-top:20px;
+    	}
+    }
+
+
+    // NEXT WEEK TEASER
+    #episodeTeaser{
+    	background:#424242;
+    	margin-top:40px;
+    	padding-top:1px;
+    	padding-bottom:10px;
+    	.sectionHeading{
+    		border-top:none;
+    		margin-top:0;
+    	}
+    	img{
+    		width:100%;
+    		margin-bottom:8px;
+    	}
+    	h3{
+    		font-size:22px;
+    		margin:0;
+    		line-height:1.2em;
+    	}
+    	p{
+    		margin-top:5px;
+    		font-size:14px;
+    	}
+    }
+
+
+    // SIGN UP ALERT
+    #signupAlert{
+    	border-top:1px solid #dcdcdc;
+    	margin-top:40px;
+    	padding-top:20px;
+    }
+
+    #signupBox{
+    	margin-top:30px;
+    	padding-top:5px;
+    	border-top:1px solid #767676;
+    	#signupTitle{
+    		font-family:'Guardian Egyptian Web',serif;
+    		color:#da82d1;
+    		font-weight:bold;
+    		font-size:18px;
+    		margin:0;
+    	}
+    	#signupDescription{
+    		font-family:'Guardian Text Sans Web',sans-serif;
+    		margin-top:0.5em;
+    	}
+    }
+
+
+    // ALL episodes
+    #allEpisodes{
+    	font-size:0;
+    }
+    .episodeBlock{
+    	width:50%;
+    	display:inline-block;
+    	margin-bottom:10px;
+    	padding:0 5px 0 0;
+    	&.activeVideo{
+    		img{
+    			border:4px solid #da82d1;
+    		}
+    		
+    	}
+
+    	&:nth-of-type(2n){
+    		padding:0 0 0 5px;
+    	}
+    	img{
+    		width:100%;
+    		transition:0.5s opacity;
+    		margin-bottom:5px;
+    	}
+    	p{
+    		font-size:14px;
+    		font-family:'Guardian Egyptian Web';
+    		font-weight:bold;
+    		margin-top:0;
+    		span{
+    			display:block;
+    			font-family:'Guardian Text Sans Web';
+    			font-weight:normal;
+    			color:#b2b2b2;
+    		}
+    	}
+    	&.published-no{
+    		opacity:0.2;
+    	}
+    	&.published-yes.inactiveVideo{
+    		cursor:pointer;
+    		&:hover{
+    			
+    			p{
+    				text-decoration:underline;
+    			}
+    			img{
+    				opacity:0.9;
+    			}
+    			
+    		}
+    	}
+    }
+
+
+    #aboutDates{
+    	p{
+    		margin-top:0;
+    		font-family:'Guardian Text Sans Web';
+    		font-size:14px;
+    	}
+    	#participate{
+    		font-size:18px;
+    		a{
+    			color:#da82d1;
+    		}
+    	}
+    }
+    @media(min-width:440px){
+    	iframe#form{
+			height:50px;
+		}
+    }
+
+
+	@media(min-width:480px){
+		#navContainer{
+			padding: 0 20px;	
+		}
+    	.contentBlock{
+	    	margin:0 20px;
+	    }
+	    .sectionHeading{
+	    	margin:40px 20px 20px;
+	    	font-size:20px;
+	    }
+	    #mainEpisodeContent p, #episodeTeaser p{
+	    	font-size:16px;
+	    }
+	    #mainEpisodeContent{
+	    	padding-right: 20px;
+	    	padding-left:20px;
+	    	margin-left:-20px;
+	    	margin-right:-20px;
+	    }
+	    #backgroundContainer{
+	    	margin:0 -20px;
+	    }
+	    .startVideo{
+	    	width:80px;
+	    	height:80px;
+	    }
+	    #aboutDates{
+	    	p{
+	    		font-size:16px;
+	    		max-width:620px;
+	    	}
+	    }
+	    #mainEpisodeContent h3{
+	    	font-size:38px;
+	    }
+	    #episodeTeaser{
+	    	h3{
+	    		font-size:30px;
+	    	}
+	    }
+
+	    #signupBox #signupTitle{
+	    	font-size:20px;
+	    }
+	    .episodeBlock p{
+	    	font-size:16px;
+	    }
+    }
+
+    @media(min-width:660px){
+    	#mainEpisode{
+    		max-width:none;
+    	}
+    	#backgroundContainer{
+    		margin:0;
+    	}
+    	.contentBlock{
+    		max-width:620px;
+    		margin:0 auto;
+    	}
+    	.sectionHeading{
+    		max-width:620px;
+    		margin-right:auto;
+    		margin-left:auto;
+    	}
+    	#mainEpisodeContent{
+    		max-width:620px;
+    		margin:-80px auto 40px;
+    		padding-left:20px;
+    		padding-right:20px;
+    	}
+    	#episodeTeaser{
+    		max-width:620px;
+    		margin-left:auto;
+    		margin-right:auto;
+    		padding-left:20px;
+    		padding-right:20px;
+    		padding-top:20px;
+			#nextWeekTeaser{
+				img{
+				width:50%;
+				float:right;
+				}
+				h3{
+					padding-right:60%;
+				}
+				p{
+					padding-right:60%;
+				}
+
+				&:after{
+					content:'';
+					clear:both;
+					display:block;
+				}
+			}
+			
+		}
+		#signupBox{
+			overflow:hidden;
+			margin-top:40px;
+			#signupDescription{
+				margin-top:0;
+			}
+			#signupTitle{
+				font-size:24px
+			}
+		}
+		#signupInformation{
+			width:50%;
+			float:left;
+			padding-right:5%;
+		}
+		#signupForm{
+			margin-top:10px;
+			width:50%;
+			float:left;
+			input{
+				font-size:18px;
+				padding:5px 0;
+				border:none;
+				height:36px;
+			}
+			input[type="submit"]{
+				background:#005689;
+				color:#fff;
+				padding:5px;
+				width:120px;
+			}
+		}
+		
+    	
+    }
+
+    @media(min-width:740px){
+        .contentBlock{
+    		max-width:700px;
+    		margin:0 auto;
+    	}
+    	.sectionHeading{
+    		max-width:700px;
+    		margin-right:auto;
+    		margin-left:auto;
+    	}
+        .sectionHeading{
+            font-size:22px;
+        }
+        #content,#navContainer{
+        	max-width:740px;
+        	margin:0 auto;
+        }
+        #episodeTeaser{
+        	max-width:700px;
+        }
+        #mainEpisodeContent{
+        	max-width:700px;
+        	h3{
+        		font-size:48px;
+        	}
+        }
+        #mainEpisode{
+        	&.videoPlaying{
+        		#backgroundLayer{
+        			display:none;
+        		}
+        	}
+        }
+        #mainEpisodeVideo{
+        	&:hover{
+        		#backgroundLayer{
+	    			background:rgba(0,0,0,0.45)
+	    		}
+        	}
+        	
+        }
+        #backgroundContainer{
+        	font-size:0;
+        	button{
+        		display:none;
+        	}
+        }
+        #backgroundLayer{
+        	position: absolute;
+			z-index: 5;
+			height: 100%;
+			width: 100%;
+			background: rgba(0,0,0,0.5);
+			color: #fff;
+			.layerInfo{
+				width:70%;
+				position:absolute;
+				top:45%;
+				left:15%;
+				transform:translateY(-50%);
+			}
+			button{
+				display:block;
+				margin: 40px auto 0;
+			}
+        }
+        #episodeQuote{
+			font-size:30px;
+			margin:0;
+		}
+		
+		#mainEpisode{
+			margin-bottom:60px;
+		}
+		#signupBox{
+			clear:both;
+			margin-top:20px;
+		}
+
+    }
+
+    @media(min-width:980px){
+    	#content,#navContainer{
+        	max-width:980px;
+        	margin:0 auto;
+        	padding:0 20px 40px;
+        }
+        .contentBlock{
+    		max-width:none;
+    		margin:0 auto;
+    	}
+    	.sectionHeading{
+    		max-width:none;
+    		margin-right:auto;
+    		margin-left:auto;
+    	}
+    	#episodeTeaser{
+    		max-width:none;
+    	}
+    	#signupForm{
+    		margin-top:15px;
+    	}
+    	
+
+    	.episodeBlock{
+    		width:32%;
+    		margin-right:2%;
+    		padding:0;
+    		&:nth-of-type(3n){
+    			margin-right:0;
+    		}
+    		&:nth-of-type(2n){
+    			padding:0;
+    		}
+    		
+    	}
+
+    	#episodeQuote{
+			font-size:36px;
+			margin:0;
+		}
+
+		#mainEpisodeContent{
+			margin-top:-120px;
+			padding:30px 20px;
+			max-width:540px;
+			margin-left:110px;
+			margin-bottom:80px;
+		}
+
+
+    }
+    @media(min-width:1140px){
+    	.sectionHeading{
+    		width:140px;
+    		border-top:none;
+    		position:absolute;
+    		margin-top:0;
+    		margin-bottom:0;
+    	}
+    	#episodeTeaser{
+    		margin:0 -20px;
+    	}
+    	#teaserMobile{
+    		display:none;
+    	}
+    	#allEpisodes{
+    		margin-top:40px;
+    		border-top:1px solid #767676;
+
+    	}
+    	#allEpisodesContainer{
+    		margin-left:160px;
+    		margin-top:5px;
+    	}
+    	#content,#navContainer{
+        	max-width:1140px;
+        }
+        #teaserContainer{
+        	margin-left:160px;
+        }
+        #aboutDates{
+        	margin-top:40px;
+        	border-top:1px solid #767676;
+        	padding-top:10px;
+        }
+        #aboutDatesContainer{
+        	margin-left:160px;
+        }
+        #participate{
+        	font-size:22px;
+        }
+
+   		#mainEpisodeContent{
+   			margin-left:140px;
+   		}
+    }
+
+    @media(min-width:1300px){
+    	#content,#navContainer{
+        	max-width:1300px;
+        }
+    	#content,#navContainer{
+    		margin:0 auto;
+    		max-width:1300px;
+    	}
+
+    	#mainEpisode{
+	    	margin-bottom:80px;
+	    }
+	    .startVideo{
+	    	width:96px;
+	    	height:96px;
+	    }
+    }
+
+
+    
+
+    
+}
