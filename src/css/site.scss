@@ -139,7 +139,7 @@ body{
     	height:44px;
     	border:none;
     	border-radius:140px;
-    	background:rgba(0,0,0,0.8);
+    	background:rgba(0,0,0,0.6);
     	outline:none;
     	cursor:pointer;
     	transition:0.5s background;
@@ -165,9 +165,7 @@ body{
 
     #episodeQuote{
     	font-family:"Guardian Egyptian Web","Egyptian Display","Guardian Text Egyptian Web","Egyptian Text",Georgia,serif;
-    	font-weight:100;
     	font-size:20px;
-    	margin:0 20px 20px;
     	
     }
 
@@ -361,9 +359,17 @@ body{
     	background:#424242;
     	#soulmatesBanner{
     		background:#f5f3e6;
-    		height:180px;
+    		height:280px;
     		position:relative;
     		padding-top:20px;
+    		p{
+    			color:black;
+    			font-weight:bold;
+    			font-family:"Guardian Egyptian Web","Egyptian Display","Guardian Text Egyptian Web","Egyptian Text",Georgia,serif;
+    			font-size:22px;
+    			line-height:1.2em;
+    			margin:0 20px 20px;
+    		}
     		img{
     			position:absolute;
     			bottom:0;
@@ -671,20 +677,25 @@ body{
 			background: rgba(0,0,0,0.5);
 			color: #fff;
 			.layerInfo{
-				width:70%;
-				position:absolute;
-				top:45%;
-				left:15%;
-				transform:translateY(-50%);
+				
 			}
 			button{
 				display:block;
 				margin: 40px auto 0;
 			}
         }
+        .layerInfo{
+        	position:absolute;
+			top:35%;
+			left:40px;
+			max-width:600px;
+			transform:translateY(-50%);
+			
+        }
         #episodeQuote{
-			font-size:30px;
-			margin:0;
+        	font-size:48px;
+			line-height:1.2em;
+			font-weight:100;
 		}
 		
 		#mainEpisode{
@@ -720,6 +731,9 @@ body{
 			max-width:480px;
 			line-height:1.2em;
 		}
+		#headerContainer button{
+
+		}
         #footerContent{
         	max-width:980px;
         }
@@ -754,9 +768,16 @@ body{
     	}
 
     	#episodeQuote{
-			font-size:36px;
-			margin:0;
+    		font-size:54px;
 		}
+        .layerInfo{
+        	position:absolute;
+			top:35%;
+			left:130px;
+			max-width:490px;
+			transform:translateY(-50%);
+			
+        }
 
 		#mainEpisodeContent{
 			margin-top:-120px;
@@ -785,6 +806,14 @@ body{
     		margin-top:0;
     		margin-bottom:0;
     	}
+        .layerInfo{
+        	position:absolute;
+			top:35%;
+			left:160px;
+			max-width:490px;
+			transform:translateY(-50%);
+			
+        }
     	#episodeTeaser{
     		margin:0 -20px;
     		padding-top:12px;
@@ -860,6 +889,14 @@ body{
     	#mainEpisodeContent{
     		margin-left:220px;
     	}
+    	.layerInfo{
+        	position:absolute;
+			top:35%;
+			left:240px;
+			max-width:490px;
+			transform:translateY(-50%);
+			
+        }
     	#content,#navContainer,#footerContent{
     		margin:0 auto;
     		max-width:1300px;
