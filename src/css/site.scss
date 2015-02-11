@@ -548,9 +548,20 @@ body{
     		padding-right:20px;
     		padding-top:20px;
 			#nextWeekTeaser{
-				img{
+				#nextWeekVideo{
 				width:50%;
 				float:right;
+					#nextWeekVideoContainer{
+						height:0;
+						width:100%;
+						padding-bottom:56.25%;
+						position:relative;
+						iframe{
+							width:100%;
+							height:100%;
+							position:absolute
+						}
+					}
 				}
 				h3{
 					padding-right:60%;
