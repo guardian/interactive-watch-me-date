@@ -72,7 +72,6 @@ define([
                 var foundValue = _.findWhere(this.allEpisodes,{
                     'coupleid':this.queryValue
                 });
-                console.log(foundValue);
                 if(foundValue){
                     this.mainEpisode = foundValue;
                 }
@@ -105,7 +104,7 @@ define([
             // Check if in app or on website
             var isWeb = true;
             if(typeof window.guardian === "undefined"){
-                isWeb = false;
+                isWeb = true;
             }
 
             $('#article-body').addClass('interactivePadding');

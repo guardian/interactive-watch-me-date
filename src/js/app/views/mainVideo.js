@@ -57,7 +57,6 @@ define([
                     '&description=' + 
                     encodeURIComponent(imageHTML)
             }  
-            console.log(shareWindow);
             window.open(shareWindow, network + "share", "width=640,height=320");
         },
 

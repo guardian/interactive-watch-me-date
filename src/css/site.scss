@@ -15,6 +15,10 @@ body{
 	iframe#form{
 		overflow:hidden;
 	}
+	a,p a{
+	background: none;
+	  text-shadow: none;
+	}
 	background:#555;
 	color:#fff;
 
@@ -64,7 +68,7 @@ body{
     		font-size: 16px;
     		font-weight: bold;
             line-height: 1.25;
-    		max-width:48%;
+    		max-width:64%;
     		margin:-20px auto 30px;
     		z-index:6;
     		position:relative;
@@ -184,7 +188,7 @@ body{
     		position:absolute;
     		top:30%;
     		left:50%;
-    		margin-left:-22px;
+    		transform:translateX(-50%);
     	}
     }
 
@@ -239,6 +243,20 @@ body{
     		margin-right:10px;
     		line-height:1.2;
     	}
+    	#nextWeekVideo{
+    		margin-bottom:1em;
+    	}
+    	#nextWeekVideoContainer{
+			height:0;
+			width:100%;
+			padding-bottom:56.25%;
+			position:relative;
+			iframe{
+				width:100%;
+				height:100%;
+				position:absolute
+			}
+		}
     	img{
     		width:100%;
     		margin-bottom:8px;
@@ -277,6 +295,7 @@ body{
     		font-weight:bold;
     		font-size:18px;
     		margin:0;
+    		line-height:1.2em;
     	}
     	#signupDescription{
     		font-family:'Guardian Text Sans Web','Agate Sans',sans-serif;
@@ -514,6 +533,9 @@ body{
     			margin-right:20px;
     		}
     	}
+    	footer #soulmatesBanner{
+    		height:180px;
+    	}
     }
 
     @media(min-width:660px){
@@ -555,17 +577,7 @@ body{
 				#nextWeekVideo{
 				width:50%;
 				float:right;
-					#nextWeekVideoContainer{
-						height:0;
-						width:100%;
-						padding-bottom:56.25%;
-						position:relative;
-						iframe{
-							width:100%;
-							height:100%;
-							position:absolute
-						}
-					}
+					
 				}
 				h3{
 					padding-right:60%;
@@ -591,7 +603,7 @@ body{
 			overflow:hidden;
 			margin-top:40px;
 			#signupDescription{
-				margin-top:0;
+				margin-top:10px;
 			}
 			#signupTitle{
 				font-size:24px
@@ -684,14 +696,13 @@ body{
 			}
 			button{
 				display:block;
-				margin: 40px auto 0;
+				margin: 20px auto 0;
 			}
         }
         .layerInfo{
         	position:absolute;
 			top:35%;
-			left:40px;
-			max-width:600px;
+			margin:0 40px;
 			transform:translateY(-50%);
 			
         }
@@ -714,7 +725,7 @@ body{
 			}
 		}
 		footer #soulmatesBanner{
-			height:125px;
+			height:135px;
 			padding:20px 0;
 	    	.advertContainer{
 	    		max-width:700px;
@@ -729,7 +740,7 @@ body{
 		    		width:36%;
 		    		padding-right:0;
 		    		float:left;
-		    		margin:0 50px 0 0;
+		    		margin:0 30px 0 0;
 		    	}
 		    	a{
 		    		position:relative;
@@ -819,7 +830,7 @@ body{
 			left:130px;
 			max-width:490px;
 			transform:translateY(-50%);
-			
+			margin:0;
         }
 
 		#mainEpisodeContent{
@@ -845,6 +856,7 @@ body{
         		max-width:940px;
     	    	p{
     	    		width:40%;
+    	    		margin-right:80px;
     	    	}
     	    	a{
     	    		margin-top:0;
@@ -944,7 +956,8 @@ body{
    				margin-top:10px;
    			}
         	.advertContainer{
-        		padding-left:80px;
+        		padding-left:120px;
+        		max-width:1020px;
         	}
         }
     }
@@ -986,6 +999,10 @@ body{
 		}
 		#headerContainer h2{
 			margin-left:260px;
+		}
+		footer #soulmatesBanner .advertContainer{
+			max-width:1260px;
+			padding-left:240px;
 		}
     }
     
