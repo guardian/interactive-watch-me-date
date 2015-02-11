@@ -488,6 +488,22 @@ body{
 	    .episodeBlock p{
 	    	font-size:16px;
 	    }
+	    footer #soulmatesBanner{
+	    	height:220px;
+	    	.advertContainer{
+		    	p{
+		    		padding-right:180px;
+		    	}
+		    	a{
+		    		position:absolute;
+		    		right:20px;
+		    		top:20px;
+		    	}
+		    }
+		    #soulmatesIcon{
+		    	left:30%;
+		    }
+	    }
         #footerContent{
     		.colophon{
     			margin-left:20px;
@@ -588,35 +604,7 @@ body{
 				width:120px;
 			}
 		}
-		footer{
-			#soulmatesBanner{
-				height:100px;
-				.advertContainer{
-					width:480px;
-					margin:0 auto;
-					position: absolute;
-					  left: 50%;
-					  margin-left: -240px;
-					  bottom: 0;
-					&:after{
-						clear:both;
-						content:'';
-						display:block;
-					}
-				}
-				img{
-					position:relative;
-					left:auto;
-					transform:none;
-					float:left;
-				}
-				a{
-					display:inline-block;
-					float:left;
-					margin:20px 0 0 60px;
-				}
-			}
-		}
+		
 
     	
     }
@@ -710,6 +698,44 @@ body{
 				column-count:3;
 			}
 		}
+		footer #soulmatesBanner{
+			height:125px;
+			padding:20px 0;
+	    	.advertContainer{
+	    		max-width:700px;
+	    		margin:0 auto;
+	    		&:after{
+	    			clear:both;
+	    			content:'';
+	    			display:block;
+	    		}
+		    	p{
+		    		position:relative;
+		    		width:36%;
+		    		padding-right:0;
+		    		float:left;
+		    		margin:0 50px 0 0;
+		    	}
+		    	a{
+		    		position:relative;
+		    		float:right;
+		    		left:auto;
+		    		top:auto;
+		    		right:auto;
+		    		margin-top:20px;
+		    	}
+		    	
+		    }
+		    #soulmatesIcon{
+		    	position:relative;
+		    	width:240px;
+		    	float:left;
+		    	left:auto;
+		    	right:auto;
+		    	transform:none;
+		    	margin-top:20px;
+		    }
+	    }
 
     }
 
@@ -795,6 +821,23 @@ body{
 	    		height:30%;
 	    	}
 	    }
+    	footer #soulmatesBanner{
+    		height:115px;
+    		padding:30px 0;
+        	.advertContainer{
+        		max-width:940px;
+    	    	p{
+    	    		width:40%;
+    	    	}
+    	    	a{
+    	    		margin-top:0;
+    	    	}
+    	    	
+    	    }
+    	    #soulmatesIcon{
+    	    	margin-top:-10px;
+    	    }
+        }
 
 
     }
@@ -877,6 +920,15 @@ body{
    				margin-left:180px;
    			}
    		}
+   		footer #soulmatesBanner{
+   			height:135px;
+   			#soulmatesIcon{
+   				margin-top:10px;
+   			}
+        	.advertContainer{
+        		padding-left:80px;
+        	}
+        }
     }
 
     @media(min-width:1300px){
