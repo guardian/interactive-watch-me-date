@@ -446,7 +446,16 @@ body{
     			}
     		}
     	}
+    	
     }
+    .really-serious-copyright{
+    		font-size: 12px;
+    		color:#dcdcdc;
+    		font-family:'Guardian Text Sans Web','Agate Sans',sans-serif;
+    		border-top:1px solid #767676;
+    		margin:0 10px 20px;
+    		padding-top:10px;
+    	}
     #footerContent{
     	padding-bottom:1px;
 		.colophon{
@@ -562,6 +571,10 @@ body{
     	}
     	footer #soulmatesBanner{
     		height:180px;
+    	}
+    	.really-serious-copyright{
+    		margin-right:20px;
+    		margin-left:20px;
     	}
     }
 
