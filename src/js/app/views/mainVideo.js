@@ -20,7 +20,7 @@ define([
         shareVideo:function(e){
             var twitterBaseUrl = "https://twitter.com/home?status=";
             var facebookBaseUrl = "https://www.facebook.com/dialog/feed?display=popup&app_id=741666719251986&link=";
-            var sharemessage = this.mainVideo.couple + ": One Couple. Two cameras. What happens next? #WatchMeDate ";
+            var sharemessage = this.mainVideo.couple + " were both given Google Glass and sent on a date. What happens next? #WatchMeDate ";
             var network = $(e.currentTarget).attr('data-source'); //make sure to add the network (pinterest,twitter,etc) as a classname to the target
             var shareWindow = "";
             var queryString = "?date="+this.mainVideo.coupleid;
