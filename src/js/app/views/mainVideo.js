@@ -64,7 +64,14 @@ define([
             $('#mainEpisode #videoContainer').html('<iframe src="http://embed.theguardian.com/embed/video/' + this.mainVideo.embedpath + '#autoplay" scrolling="no" frameborder="none" width="100%" height="100%"></iframe>');
             $('#mainEpisode #backgroundImage').fadeOut(500,function(){
                $('#mainEpisode').addClass('videoPlaying');
-            })
+            });
+            var coupleGa = this.mainVideo.coupleid;
+             window.ga('send', {
+              'hitType': 'event',          // Required.
+              'eventCategory': 'play video',   // Required.
+              'eventAction': 'play',      // Required.
+              'eventLabel': coupleGa
+            });
         },
 
         render: function(templateData){

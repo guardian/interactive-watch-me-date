@@ -4,14 +4,16 @@ define([
     'routes',
     'text!templates/appTemplate.html',
     'views/mainVideo',
-    'underscore'
+    'underscore',
+    'views/analytics',
 ], function(
     Backbone,
     Mustache,
     routes,
     template,
     mainVideo,
-    _
+    _,
+    ga
 ) {
     'use strict';
 
@@ -26,6 +28,13 @@ define([
        
         switchVideo:function(e){
             var clickedCouple = $(e.currentTarget).attr('data-date');
+
+            window.ga('send', {
+              'hitType': 'event',          // Required.
+              'eventCategory': 'switch video',   // Required.
+              'eventAction': 'click',      // Required.
+              'eventLabel': clickedCouple
+            });
 
             var foundValue = _.findWhere(this.allEpisodes,{
                 'coupleid':clickedCouple
