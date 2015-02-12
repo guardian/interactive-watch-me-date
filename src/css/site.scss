@@ -54,19 +54,26 @@ body{
     #navContainer{
 		background:#005689;
 		height:100%;
-		padding:0 10px;
+		padding:1px 10px 0;
+		&:after{
+			clear:both;
+			content:'';
+			display:block;
+		}
 	}
 
     #guardianLogo{
     	width:170px;
     	float:right;
     	margin-top:10px;
+    	display:inline-block;
     }
 
     #homeLogo{
     	width:15px;
     	height:18px;
     	margin-top:14px;
+    	display:inline-block;
     }
 
     #headerContainer{
@@ -92,6 +99,7 @@ body{
     		font-size:0;
     		position:relative;
     		overflow:hidden;
+    		width:100%;
     	}
     	#headerImage:after{
     		width: 100%;
@@ -166,16 +174,13 @@ body{
 	    		content: '';
 	    		position: absolute;
 	    		display: block;
-	    		width: 0;
-	    		height: 0;
-	    		border-style: solid;
-	    		border-width: 1em 0 1em 2.4em;
-	    		border-color: transparent transparent transparent #f1f1f1;
-	    		-moz-transform: scale(0.99999);
-	    		top: 50%;
-	    		left: 50%;
-	    		margin-top: -.9em;
-	    		margin-left: -.9em;
+	    		width: 26px;
+	    		height: 22px;
+	    		background-image: url(../imgs/playArrow.svg);
+	    		top:50%;
+	    		left:50%;
+	    		margin-left:-11px;
+	    		margin-top:-11px;
 	    	}
 	    }
     }
