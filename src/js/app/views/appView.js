@@ -104,7 +104,7 @@ define([
             // Check if in app or on website
             var isWeb = true;
             if(typeof window.guardian === "undefined"){
-                isWeb = false;
+                isWeb = true;
             }
 
             $('#article-body').addClass('interactivePadding');
