@@ -24,8 +24,8 @@ define([
             var network = $(e.currentTarget).attr('data-source'); //make sure to add the network (pinterest,twitter,etc) as a classname to the target
             var shareWindow = "";
             var queryString = "?date="+this.mainVideo.coupleid;
-            var coupleImage = "{{assets}}/imgs/dates/" + this.mainVideo.coupleid + '.jpg';
-            var guardianUrl = "http://preview.gutools.co.uk/global/ng-interactive/2015/feb/11/watch-me-date" + queryString;
+            var coupleImage = "{{assets}}/imgs/dates/" + this.mainVideo.coupleid + '_1260.jpg';
+            var guardianUrl = "http://www.theguardian.com/lifeandstyle/ng-interactive/2015/feb/12/watch-me-date" + queryString;
             
 
             if(network === "twitter"){

@@ -15,7 +15,7 @@ body{
 	iframe#form{
 		overflow:hidden;
 	}
-	a,p a{
+	a,p a,li a{
 	background: none;
 	  text-shadow: none;
 	}
@@ -58,6 +58,12 @@ body{
     	width:170px;
     	float:right;
     	margin-top:10px;
+    }
+
+    #homeLogo{
+    	width:15px;
+    	height:18px;
+    	margin-top:14px;
     }
 
     #headerContainer{

@@ -95,7 +95,7 @@ define([
                 var day = episode.date.split('/')[0];
                 var monthNumber = parseInt(episode.date.split('/')[1]);
                 var month = _this.months[monthNumber-1];
-                episode.date = month + " " + day;
+                episode.date = day + " " + month;
                 return episode;
             });
 
@@ -104,7 +104,7 @@ define([
             // Check if in app or on website
             var isWeb = true;
             if(typeof window.guardian === "undefined"){
-                isWeb = true;
+                isWeb = false;
             }
 
             $('#article-body').addClass('interactivePadding');
