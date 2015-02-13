@@ -91,6 +91,29 @@ define([
             }
         },
 
+        animateHeader: function(){
+            $('<img/>').attr('src', '{{assets}}/imgs/header_off.jpg').load(function() {
+                var $header = $('#headerImage img');
+                setInterval(function(){
+                    var i = 0;
+                    var state = {
+                        off: "on",
+                        on: "off"
+                    }
+                    function flicker(current){
+                        $header.attr('src','{{assets}}/imgs/header_'+ current +'.jpg');
+                        if(i<3){
+                            i++;
+                            setTimeout(function(){
+                                 flicker(state[current]);
+                             },100*(i/2))
+                        }
+                    }
+                    flicker('off');
+                },8000)
+            });
+        },
+
         initialize: function() {   
             this.mainVideo = new mainVideo();
             this.collection.on('sync', this.render, this);
@@ -127,6 +150,7 @@ define([
             // Render main video
             this.$('#mainVideoContainer').html(this.mainVideo.render(this.mainEpisode).el);
             
+            this.animateHeader();
             this.updateActiveVideo();
 
             return this;
