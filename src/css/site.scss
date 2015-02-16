@@ -103,7 +103,8 @@ body{
             opacity: 0.8;
     	}
     	img{
-    		width:100%;
+    		width:120%;
+            margin-left:-10%;
     		z-index:4;
     		position:relative;
     	}
@@ -511,6 +512,10 @@ body{
 		#navContainer{
 			padding: 0 20px;	
 		}
+        #headerContainer img{
+            width:100%;
+            margin-left:0;
+        }
 		#headerContainer h2{
 			font-size:18px;
 			margin-top:-20px;
@@ -764,25 +769,41 @@ body{
 			width: 100%;
 			background: rgba(0,0,0,0.5);
 			color: #fff;
-			.layerInfo{
-				
-			}
 			button{
-				display:block;
-				margin: 20px auto 0;
+				display:inline-block;
 			}
+        }
+        #infoContainer{
+            position: relative;
+            height:100%;
+            width:100%;
         }
         .layerInfo{
         	position:absolute;
-			top:35%;
+			top:0;
 			margin:0 40px;
-			transform:translateY(-50%);
-			
+			display:table;
+            height:100%;
+        }
+        .layerRow{
+            display:table-row;
+            &#buttonContainer{
+                height:100%;
+                position: relative;
+            }
+        }
+        .layerColumn{
+            text-align: center;
+            vertical-align: middle;
+            display:table-cell;
+            font-size:0;
+            padding-bottom:80px;
         }
         #episodeQuote{
         	font-size:48px;
 			line-height:1.2em;
 			font-weight:100;
+            margin:40px 0 0;
 		}
 		
 		#mainEpisode{
@@ -897,14 +918,16 @@ body{
 
     	#episodeQuote{
     		font-size:54px;
+            margin-top:20px;
 		}
         .layerInfo{
-        	position:absolute;
-			top:35%;
 			left:130px;
 			max-width:490px;
-			transform:translateY(-50%);
 			margin:0;
+            bottom:140px;
+        }
+        .layerColumn{
+            padding-bottom:120px;
         }
 
 		#mainEpisodeContent{
@@ -953,12 +976,10 @@ body{
     		margin-bottom:0;
     	}
         .layerInfo{
-        	position:absolute;
-			top:35%;
 			left:160px;
-			max-width:490px;
-			transform:translateY(-50%);
-			
+        }
+        #episodeQuote{
+            margin-top:40px;
         }
     	#episodeTeaser{
     		margin:0 -20px;
@@ -1048,11 +1069,11 @@ body{
     	}
     	.layerInfo{
         	position:absolute;
-			top:35%;
 			left:240px;
 			max-width:490px;
-			transform:translateY(-50%);
-			
+        }
+        #episodeQuote{
+            margin-top:60px;
         }
     	#content,#navContainer,#footerContent{
     		margin:0 auto;
