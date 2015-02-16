@@ -181,20 +181,20 @@ body{
     	outline:none;
     	cursor:pointer;
     	transition:0.5s background;
+        font-size:0;
+        position:relative;
     	span{
     		position:relative;
-	    	&:before{
-	    		content: '';
-	    		position: absolute;
-	    		display: block;
-	    		width: 26px;
-	    		height: 22px;
-	    		background-image: url(../imgs/playArrow.svg);
-	    		top:50%;
-	    		left:50%;
-	    		margin-left:-11px;
-	    		margin-top:-11px;
-	    	}
+    		content: '';
+    		position: absolute;
+    		display: block;
+    		width: 26px;
+    		height: 22px;
+    		background-image: url(../imgs/playArrow.svg);
+    		top:50%;
+    		left:50%;
+    		margin-left:-11px;
+    		margin-top:-11px;
 	    }
     }
 
