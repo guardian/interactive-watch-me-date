@@ -13,6 +13,8 @@ define([
             return 'http://interactive.guim.co.uk/spreadsheetdata/'+this.key+'.json';
         },
 
+        originalData: null,
+
         model: Backbone.NestedModel.extend({}),
 
         initialize: function(options) {
@@ -28,7 +30,8 @@ define([
                 console.error('Error parsing sheet JSON');
                 return false;
             }
-
+            this.originalData = data.sheets;
+            
             return data.sheets[this.sheetname];
         }
 

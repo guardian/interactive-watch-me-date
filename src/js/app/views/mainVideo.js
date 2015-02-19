@@ -61,7 +61,7 @@ define([
         },
 
         playVideo:function(e){
-            $('#mainEpisode #videoContainer').html('<iframe src="http://embed.theguardian.com/embed/video/' + this.mainVideo.embedpath + '#autoplay" scrolling="no" frameborder="none" width="100%" height="100%"></iframe>');
+            $('#mainEpisode #videoContainer').html('<iframe src="' + this.mainVideo.video + '#autoplay" scrolling="no" frameborder="none" width="100%" height="100%"></iframe>');
             $('#mainEpisode #backgroundImage').fadeOut(500,function(){
                $('#mainEpisode').addClass('videoPlaying');
             });

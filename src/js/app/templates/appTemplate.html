@@ -22,14 +22,14 @@
                 <div id="nextWeekTeaser">
                     <div id="nextWeekVideo">
                         <div id="nextWeekVideoContainer">
-                            <iframe src="http://embed.theguardian.com/embed/video/lifeandstyle/video/2015/feb/11/watch-me-date-alex-david-video-teaser" scrolling="no" frameborder="none" width="100%" height="100%"></iframe>
+                            <iframe src="{{teaser.video}}" scrolling="no" frameborder="none" width="100%" height="100%"></iframe>
                         </div>
                     </div>
                     
                     <p id="teaserMobile">Coming next week</p>
-                    <h3>Alex & David</h3>
-                    <date>19 February</date>
-                    <p id="teaserDescription">Alex, 32, is a civil servant and goes for Latino types. David, 37, is a journalist and writer from Scotland who looks for confidence. Will Alex be impressed by some serious name dropping and ‘ridiculously perfect hair’? And what happens when things get ‘awkward’?</p>
+                    <h3>{{teaser.name}}</h3>
+                    <date>{{teaser.date}}</date>
+                    <p id="teaserDescription">{{{teaser.description}}}</p>
                 </div>
         
                 <div id="signupBox">

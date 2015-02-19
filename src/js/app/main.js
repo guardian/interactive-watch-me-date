@@ -20,7 +20,7 @@ define([
         // from live external data
         var dateCollection = new SheetCollection({
             key: key,
-            sheetname: 'Sheet1'
+            sheetname: 'dates'
         });
        
         // Create an app view, passing along the collection made above

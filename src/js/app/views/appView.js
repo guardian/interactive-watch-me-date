@@ -126,18 +126,46 @@ define([
             this.collection.on('sync', this.render, this);
         },
 
+        formatDate: function(date){
+            var day = date.split('/')[0];
+            var monthNumber = parseInt(date.split('/')[1]);
+            var month = this.months[monthNumber-1];
+            return day + " " + month;
+        },
+
+        getEmbedPath:function(url){
+            var embedUrl = 'http://embed.theguardian.com/embed/video';
+            var parsedUrl = document.createElement('a');
+            parsedUrl.href = url;
+
+            var pathname = parsedUrl.pathname;
+
+            if(pathname[0] === "/"){
+                return embedUrl + pathname;
+            }else{
+                return embedUrl + '/' + pathname;
+            }
+        },
+
         render: function() {
             var _this = this;
             this.months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-            this.allEpisodes = _.map(this.collection.toJSON(),function(episode){
-                var day = episode.date.split('/')[0];
-                var monthNumber = parseInt(episode.date.split('/')[1]);
-                var month = _this.months[monthNumber-1];
-                episode.date = day + " " + month;
+
+            //Format dates
+            this.allEpisodes = _.map(this.collection.originalData.dates,function(episode){
+                episode.date = _this.formatDate(episode.date);
+                if(episode.video){
+                    episode.video = _this.getEmbedPath(episode.video);
+                }
                 return episode;
             });
 
+            this.teaser = this.collection.originalData.teaser[0];
+            this.teaser.date = this.formatDate(this.teaser.date);
+            this.teaser.video = this.getEmbedPath(this.teaser.video);
+
+            //Decide which video to play first
             this.selectInitialDate();
 
             // Check if in app or on website
@@ -151,6 +179,7 @@ define([
             // Render main template
             this.$el.html(Mustache.render(template, {
                 allEpisodes: this.allEpisodes,
+                teaser: this.teaser,
                 isWeb: isWeb
             }));
 
