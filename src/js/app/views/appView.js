@@ -171,10 +171,11 @@ define([
             // Check if in app or on website
             var isWeb = true;
             if(typeof window.guardian === "undefined"){
-                isWeb = true;
+                isWeb = false;
             }
 
             $('#article-body').addClass('interactivePadding');
+            $('#article-header').addClass('interactiveHide');
            
             // Render main template
             this.$el.html(Mustache.render(template, {

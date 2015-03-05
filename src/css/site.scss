@@ -373,6 +373,10 @@ body{
     		width:100%;
     		transition:0.5s opacity;
     		margin-bottom:5px;
+            backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
     	}
     	p{
     		font-size:14px;
@@ -398,7 +402,7 @@ body{
     				text-decoration:underline;
     			}
     			img{
-    				opacity:0.9;
+    				opacity:0.8;
     			}
     			
     		}

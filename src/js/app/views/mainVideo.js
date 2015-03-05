@@ -42,21 +42,7 @@ define([
                     "&picture=" + 
                     encodeURIComponent(coupleImage) + 
                     "&redirect_uri=http://www.theguardian.com";
-            }else if(network === "pinterest"){
-                shareWindow = 
-                    pinterestBaseUrl + 
-                    encodeURIComponent(guardianUrl) + 
-                    "&media=" + 
-                    encodeURIComponent(gifUrl) + 
-                    "&description=" + 
-                    encodeURIComponent(sharemessage);
-            }else if(network === "tumblr"){
-                shareWindow = 
-                    tumblrBaseUrl + 
-                    encodeURIComponent(guardianUrl) + 
-                    '&description=' + 
-                    encodeURIComponent(imageHTML)
-            }  
+            }
             window.open(shareWindow, network + "share", "width=640,height=320");
         },
 
